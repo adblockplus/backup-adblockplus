@@ -1415,7 +1415,8 @@ function updateEmail()
 
   updateDataField();
 
-  document.documentElement.canAdvance = anonymous || /\S/.test(value);
+ // document.documentElement.canAdvance = anonymous || /\S/.test(value);
+  document.documentElement.canAdvance = anonymous || /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i.test(value);
 }
 
 function updateExtensions(attach)
